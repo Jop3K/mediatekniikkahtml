@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+    <title>Flexbox tehtava</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        header {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            height: 500px;
+        }
+
+        nav {
+            background-color: black;
+            width: 100%;
+            top: 40px;
+            padding: 10px 0;
+        }
+
+        footer {
+            background-color: gainsboro;
+            width: 100%;
+        }
+
+
+
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+
+        .brown {
+            background-color: brown;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .flexbox {
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+            min-height: 200px;
+            border: 5px solid white;
+        }
+
+
+
+        .pienikuva {
+            width: 100%;
+            max-width: 250px;
+        }
+        .kuva {
+            width: 100%;
+
+        }
+
+        @media screen and (min-width: 500px) {
+
+        }
+
+        @media screen and (min-width: 650px) {
+
+            .red {
+                width: 50%;
+            }
+            .blue {
+                width: 50%;
+            }
+
+
+            .orange {
+                width: 33%;
+            }
+
+
+            .brown {
+                width: 33%;
+            }
+
+            .pink {
+               width: 33%;
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            .container {
+                width: 800px;
+                margin: auto;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<main class="container">
+
+    <div class="flexbox"><img class="kuva" src="https://cdn.pixabay.com/photo/2018/11/11/16/51/ibis-3809147_960_720.jpg"> </div>
+
+    <div class="flexbox red"><img class="pienikuva" src="https://cdn.pixabay.com/photo/2013/10/12/16/36/lambo-194485_960_720.jpg"></div>
+
+    <div class="flexbox blue"><img class="pienikuva" src="https://cdn.pixabay.com/photo/2017/03/14/11/33/yellow-2142781_960_720.jpg"> </div>
+
+    <div class="flexbox pink"> <img class="pienikuva" src="https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015_960_720.jpg"></div>
+    <div class="flexbox brown"> <img class="pienikuva" src="https://cdn.pixabay.com/photo/2016/10/30/20/22/astronaut-1784245_960_720.jpg"></div>
+    <div class="flexbox orange"> <img class="pienikuva" src="https://cdn.pixabay.com/photo/2012/01/09/09/10/sun-11582_960_720.jpg"></div>
+
+
+</main>
+
+
+
+
+</body></html>
