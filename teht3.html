@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Balloon mission possible</title>
 
 <style>
 
@@ -11,21 +11,34 @@
 </head>
 <body>
 
-<p id="balloon" style="font-size: calc(10px + 30%);">🎈</p>
+<p id="balloon" style="font-size: 20px;" >🎈</p>
 
 <script>
 
     let balloon = document.getElementById("balloon");
-
-    let balloonSize = balloon.style.fontSize;
+    let newSize;
 
     window.addEventListener("keydown", event => {
-       if(event.key == "ArrowUp") {
-           balloon.style.fontSize =  'calc(10px + 10%)';
-       } else if (event.key == "ArrowDown"){
-           balloon.style.fontSize = "-10%";
-       }
+
+        if(parseInt(balloon.style.fontSize, 10) > 200){  // explode if size over 300px
+            document.getElementById("balloon").textContent = "💥";
+        } else {
+
+
+            if (event.key == "ArrowUp") { // inflate
+                newSize = parseInt(balloon.style.fontSize, 10) * 1.1;
+                balloon.style.fontSize = JSON.stringify(newSize) + "px";
+
+            }
+            if (event.key == "ArrowDown") { // deflate
+                newSize = parseInt(balloon.style.fontSize, 10) * 0.9;
+                balloon.style.fontSize = JSON.stringify(newSize) + "px";
+
+            }
+
+        }
     });
+
 
 </script>
 </body>
