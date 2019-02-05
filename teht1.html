@@ -26,9 +26,10 @@
 	<div id="aurinko" class="shadow"> </div>
 
 	<div id="tekstilaatikko">
-
-		<p class="boxtext">You clicked:   </p>
-		<p class="boxtext">This many times:   </p>
+		You clicked:
+		<div id="textbox" class="boxtext">  </div>
+		This many times:
+		<div id="clicks" class="boxtext">   </div>
 
 	</div>
 
@@ -36,4 +37,136 @@
 	<div id="darkgreenhill"></div>
 
 </body>
+
+<script>
+
+	'use strict'
+
+	const upperLamp = document.getElementById('valo1');
+	const middleLamp = document.getElementById('valo2');
+	const lowerLamp = document.getElementById('valo3');
+	//const lowerLamp = document.querySelector('#lights-container div:last-child');
+	const textbox = document.getElementById('textbox');
+	const clicks = document.getElementById('clicks');
+	const colors = ['hotpink', 'red', 'yellow', 'lime', 'dodgerblue', 'white'];
+	const clickCounter =
+			{
+				up: 0,
+				middle: 0,
+				low: 0,
+			};
+
+	// The syntax for accessing the property of an object is:
+
+	// objectName.property         // person.age
+
+	// objectName["property"]      // person["age"]
+
+	// objectName[expression]      // x = "age"; person[x]
+
+
+	upperLamp.addEventListener('click', (evt) => {
+		textbox.innerHTML = ' the top lamp';
+		clickCounter['up'] += 1;
+		const theCSSprop = window.getComputedStyle(upperLamp, null).
+		getPropertyValue('background-color');
+		showClicks(theCSSprop);
+	});
+
+	middleLamp.addEventListener('click', (evt) => {
+		textbox.innerHTML = ' the middle lamp';
+		clickCounter['middle'] += 1;
+		const theCSSprop = window.getComputedStyle(middleLamp, null).
+		getPropertyValue('background-color');
+		showClicks(theCSSprop);
+	});
+
+	lowerLamp.addEventListener('click', (evt) => {
+		textbox.innerHTML = ' the lowest lamp';
+		clickCounter['low'] += 1;
+		const theCSSprop = window.getComputedStyle(lowerLamp, null).
+		getPropertyValue('background-color');
+		showClicks(theCSSprop);
+	});
+
+	const showClicks = (pickedColor) => {
+		clicks.innerHTML = 'top : '+clickCounter['up']+'<br>'+
+				'middle: '+clickCounter['middle']+'<br>'+
+				'lowest: '+clickCounter['low']+'<br>'+
+				'color: ' +pickedColor;
+	};
+
+	const setColor = (element, color) => {
+		element.style.background = color;
+	};
+
+	const setUpmost = (color) => {
+		setColor(upperLamp, color);
+	};
+
+	const setMiddle = (color) => {
+		setColor(middleLamp, color);
+	};
+
+	const setLowest = (color) => {
+		setColor(lowerLamp, color);
+	};
+
+	const flashLights = () => {
+		setUpmost('red');
+		setMiddle('black');
+		setLowest('black');
+		setTimeout(() => {
+			setMiddle('yellow');
+			setTimeout(() => {
+				setUpmost('black');
+				setMiddle('black');
+				setLowest('green');
+			}, 1000);
+		}, 1000);
+	};
+
+	const brokenLights = () => {
+		setInterval(() => {
+			setUpmost('black');
+			setMiddle('black');
+			setLowest('black');
+			setTimeout(() => {
+				randomLampColor();
+			}, 1000);
+		}, 2000);
+	};
+
+	const randomLampColor = () => {
+		const randomColor = colors[getRandomInt(colors.length)];
+		const random = getRandomInt(3);
+		if (random == 0) {
+			setUpmost(randomColor);
+		} else if (random == 1) {
+			setMiddle(randomColor);
+		} else {
+			setLowest(randomColor);
+		}
+	};
+
+	const getRandomInt = (max) => {
+		return Math.floor(Math.random() * Math.floor(max));
+	};
+
+	//setUpmost('blue');
+	//setMiddle('pink');
+	//setLowest('violet');
+	//flashLights();
+
+	// sleep time expects milliseconds
+	//const sleep = (time) => {
+	//    return new Promise((resolve) => setTimeout(resolve, time));
+	//};
+
+	// Usage!
+	//sleep(3000).then(() => {
+	//    brokenLights();// Do something after the sleep!
+	//});
+</script>
+
 </html>

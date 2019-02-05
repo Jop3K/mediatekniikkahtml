@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parallax</title>
+
+
+    <style>
+ /* https://css-tricks.com/perfect-full-page-background-image/ */
+        html {
+            height: 100%;
+            width: 100%;
+display:block;
+        }
+ body {
+     height: 100%;
+     width: 100%;
+     margin: 0;
+     padding:0;
+     box-sizing:border-box;
+ }
+
+        #astronaut {
+            position:absolute;
+            top: 25%;
+            left: 33%;
+            height: 230px;
+            width: 230px;
+            background-image: url("astronaut.png");
+            z-index: 4;
+        }
+
+        #ship {
+            position:absolute;
+            top: 20%;
+            left: 30%;
+            height: 500px;
+            width: 500px;
+            background-image:url("spaceship.png");
+            z-index: 3;
+        }
+        #mousepostop {
+            width: 300px;
+            height: 50px;
+        }
+        #mouseposcenter {
+            width: 300px;
+            height: 50px;
+        }
+
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            background: url(space.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+        p, h3 {
+            color: white;
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+<div class="wrapper" onmousemove="showCoords(event)">
+
+    <div id="mousepostop"> <h3>From the top left</h3>
+<p id="top-position"></p>
+</div>
+
+
+    <div id="mouseposcenter"> <h3> From the center </h3>
+    <p id="mid-position"></p>
+    </div>
+
+<div id="astronaut">
+
+</div>
+<div id="ship">
+
+</div>
+
+</div>
+</body>
+
+<script>
+    const wrapper = document.querySelector('.wrapper');
+
+    // page center positions
+    const cx = wrapper.clientWidth / 2;
+    const cy = wrapper.clientHeight / 2;
+
+
+    function showCoords(event) {
+        let x = event.clientX;
+        let y = event.clientY;
+        let center_x = cx - x;
+        let center_y = cy - y;
+        let coor = "X coords: " + x + ", Y coords: " + y;
+        let midcoor = "X from center: " + center_x + ", Y from center: " + center_y;
+        document.getElementById("top-position").innerText = coor;
+        document.getElementById("mid-position").innerText = midcoor;
+
+
+        document.getElementById("astronaut").style.transform = 'translateX(' + center_x/100 + '%) translateY(' + center_y/100 + '%)';
+        document.getElementById("ship").style.transform = 'translateX(' + center_x/100 + '%) translateY(' + center_y/100 + '%)';
+    }
+
+
+
+</script>
+
+</html>
