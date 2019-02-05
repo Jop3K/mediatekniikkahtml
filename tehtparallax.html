@@ -20,23 +20,25 @@ display:block;
      box-sizing:border-box;
  }
 
-        #astronaut {
+        #player {
             position:absolute;
-            top: 25%;
+            top: 45%;
             left: 33%;
-            height: 230px;
-            width: 230px;
-            background-image: url("astronaut.png");
+            height: 300px;
+            width: 300px;
+            background-image: url("player.png");
+            background-size: 300px 300px;
             z-index: 4;
         }
 
-        #ship {
+        #football {
             position:absolute;
-            top: 20%;
-            left: 30%;
-            height: 500px;
-            width: 500px;
-            background-image:url("spaceship.png");
+            top: 70%;
+            left: 53%;
+            height: 50px;
+            width: 50px;
+            background-image:url("football.png");
+            background-size: 50px 50px;
             z-index: 3;
         }
         #mousepostop {
@@ -53,7 +55,7 @@ display:block;
             height: 100%;
             position: relative;
             overflow: hidden;
-            background: url(space.jpg) no-repeat center center fixed;
+            background: url(footballfield.jpeg) no-repeat center center fixed;
             background-size: cover;
         }
         p, h3 {
@@ -77,10 +79,10 @@ display:block;
     <p id="mid-position"></p>
     </div>
 
-<div id="astronaut">
+<div id="player">
 
 </div>
-<div id="ship">
+<div id="football">
 
 </div>
 
@@ -106,8 +108,8 @@ display:block;
         document.getElementById("mid-position").innerText = midcoor;
 
 
-        document.getElementById("astronaut").style.transform = 'translateX(' + center_x/100 + '%) translateY(' + center_y/100 + '%)';
-        document.getElementById("ship").style.transform = 'translateX(' + center_x/100 + '%) translateY(' + center_y/100 + '%)';
+        document.getElementById("player").style.transform = 'translateX(' + center_x/100 + '%) translateY(' + center_y/100 + '%)';
+        document.getElementById("football").style.transform = 'translateX(' + center_x/100 + '%) translateY(' + center_y/100 + '%)';
     }
 
 
