@@ -129,10 +129,14 @@
             font-size: 20px;
             margin-top: 50px;
         }
+        #myVideo {
+            margin-top: 10%;
+        }
 
     </style>
 </head>
 <body>
+
 
 <main class="container">
 
@@ -149,11 +153,26 @@
 
     </div>
 
-    <div class="flexbox blue" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/313974285?autoplay=1&loop=1&title=0&byline=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </div><script src="https://player.vimeo.com/api/player.js"></script>
+    <div class="flexbox blue" style="position:relative;">
+        <video id="myVideo" width="100%" controls loop autoplay>
+            <source src="kahvikuppi_joni_720p.mp4" type="video/mp4">
+        </video>
+    </div>
+    <!--
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <iframe src="https://player.vimeo.com/video/313974285?autoplay=1&loop=1&title=0&byline=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+-->
 
+    <div class="flexbox pink">
 
-    <div class="flexbox pink"> <img class="pienikuva" src="https://placekitten.com/210/330"></div>
+        <h2>My content</h2>
+
+        <p><a href="https://htmlpreview.github.io/?https://github.com/Jop3K/mediatekniikkahtml/blob/master/teht1.html">Traffic lights</a></p>
+
+        <p><a href="https://htmlpreview.github.io/?https://github.com/Jop3K/mediatekniikkahtml/blob/master/tehtparallax.html">Parallax</a> </p>
+
+        <p><a href="https://htmlpreview.github.io/?https://github.com/Jop3K/mediatekniikkahtml/blob/master/teht3.html">Balloon</a></p>
+    </div>
     <div class="flexbox brown"> <img class="pienikuva" src="https://placekitten.com/212/311"></div>
     <div class="flexbox orange"> <img class="pienikuva" src="https://placekitten.com/213/315"></div>
 
@@ -163,4 +182,20 @@
 
 
 
-</body></html>
+</body>
+
+<script>
+/*
+    let vid = document.getElementById("myVideo");
+
+    function playVid(){
+        vid.play();
+    }
+*/
+
+
+
+
+</script>
+
+</html>
