@@ -1,0 +1,196 @@
+html, body {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+header {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    height: 500px;
+}
+
+nav {
+    background-color: black;
+    width: 100%;
+    top: 40px;
+    padding: 10px 0;
+}
+
+footer {
+    background-color: gainsboro;
+    width: 100%;
+}
+
+
+
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.orange {
+    background-color: orange;
+}
+
+
+.brown {
+    background-color: brown;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.white {
+    background-color: white;
+    opacity:0.7;
+}
+.whitesmall {
+    background-color: white;
+    opacity:0.7;
+}
+
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flexbox {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    min-height: 200px;
+    /* border: 5px solid lightblue; */
+    border-style: groove;
+    opacity: 0.9;
+}
+
+
+
+.pienikuva {
+    width: 100%;
+    max-width: 250px;
+}
+.kuva {
+
+    max-height: 600px;
+    width: 60%;
+    height: auto;
+
+}
+
+@media screen and (min-width: 500px) {
+
+}
+
+@media screen and (min-width: 650px) {
+
+    .red {
+        width: 50%;
+    }
+    .white {
+        width: 50%;
+    }
+    .blue {
+        width: 50%;
+    }
+
+
+    .orange {
+        width: 33.333%;
+    }
+
+
+    .brown {
+        width: 33.333%;
+    }
+
+    .pink {
+        width: 33.333%;
+    }
+    .whitesmall {
+        width: 33.333%;
+    }
+
+}
+
+@media screen and (min-width: 900px) {
+    .container {
+        width: 800px;
+        margin: auto;
+    }
+}
+
+.aboutme {
+
+    font-family: Arial;
+    font-size: 15px;
+}
+#myVideo {
+    margin-top: 10%;
+}
+
+#bgvideo {
+    position: fixed;
+    filter: blur(8px);
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+#joni {
+    overflow:hidden;
+}
+#cinemagraph {
+
+}
+
+.duckhunt {
+
+    font-size: 30px;
+    font-family: Arial;
+    text-align: center;
+    animation: colors 8s infinite;
+}
+
+@keyframes colors {
+    0%   {color: red;}
+    25%  {color: yellow;}
+    50%  {color: blue;}
+    100% {color: green;}
+}
+
+
+@keyframes doggolaugh{
+    from {
+        background-position: -360px -110px;
+    }
+    to {
+        background-position: -600px -110px;
+    }
+}
+
+.laughingdog {
+    width: 120px;
+    height: 110px;
+    position: relative;
+    left: calc(50% - 70px);
+
+    background: url(sprite.png) no-repeat -360px -110px;
+
+    animation: doggolaugh  1s steps(2) infinite;
+}

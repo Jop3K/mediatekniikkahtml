@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+
+}
+
+.duckhunt {
+
+    font-size: 50px;
+    font-family: Arial;
+    text-align: center;
+    animation: colors 8s infinite;
+}
+.laughingdog {
+    width: 120px;
+    height: 110px;
+    left: calc(50% - 60px);
+    position: fixed;
+
+    background: url(sprite.png) no-repeat -360px -110px;
+
+    animation: doggolaugh  1s steps(2) 15;
+}
+
+
+#stage {
+    width: 900px;
+    height: 480px;
+    background: url(stage.png);
+    background-size: contain;
+    margin: auto;
+    position: relative;
+}
+
+.dog{
+    width: 120px;
+    height: 110px;
+    position: absolute;
+    bottom: 63px;
+    left: 10px;
+    transition: left 3s linear;
+
+    background: url(sprite.png) no-repeat 0 0;
+    /* background-position: 0 0; */
+
+    animation: doggowalk 0.5s steps(4) 6,
+    doggosniff 0.5s 3s steps(2) 6,
+    doggojump 1s 6s steps(3) 1,
+    doggolaugh 200ms 7s steps(2) 20 alternate;
+}
+
+.bird {
+    width: 70px;
+    height: 50px;
+    position: absolute;
+    bottom: 300px;
+    left: -50px;
+    transition: left 3s linear;
+    background: url(sprite.png) no-repeat -253px -234px;
+    animation: birdyfly 0.9s steps(3) 6;
+}
+
+.dogwalk{
+    left: 400px;
+}
+
+.birdfly{
+    left: 900px;
+}
+
+@keyframes doggowalk{
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -480px 0;
+    }
+}
+
+@keyframes doggosniff{
+    from {
+        background-position: -360px 0;
+    }
+    to {
+        background-position: -600px 0;
+    }
+}
+
+@keyframes doggojump{
+    from {
+        background-position: 0 -110px;
+    }
+    to {
+        background-position: -360px -110px;
+    }
+}
+
+@keyframes doggolaugh{
+    from {
+        background-position: -360px -110px;
+    }
+    to {
+        background-position: -600px -110px;
+    }
+}
+
+@keyframes birdyfly {
+    from {
+            background-position: -253px -234px;
+    }
+    to {
+            background-position: -520px -234px;
+    }
+}
+
+@keyframes colors {
+    0%   {color: red;}
+    25%  {color: yellow;}
+    50%  {color: blue;}
+    100% {color: green;}
+}
+
+
+
+.page_content{
+    -ms-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-transition: all 500ms ease-in-out !important;
+    transition: all 500ms ease-in-out !important;
+    position: absolute;
+
+}
+

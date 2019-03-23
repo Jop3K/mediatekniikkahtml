@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Duck hunt</title>
+    <link href="duckhunt.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="stage" class="page_content">
+    <div class="dog"></div>
+
+    <div class="bird"></div>
+</div>
+
+<h1 class="duckhunt">DUCK HUNT</h1>
+
+<div class="laughingdog"></div>
+
+<script>
+  let dog = document.querySelector('.dog');
+  let bird = document.querySelector('.bird');
+
+  let dogTimer = setTimeout(() => {
+    console.log('The dog is walking');
+    dog.classList.add('dogwalk');
+  }, 50);
+
+  let birdTimer = setTimeout(() => {
+    console.log('The bird is flying');
+    bird.classList.add('birdfly');
+  }, 50);
+
+
+
+</script>
+
+
+</body>
+
+<!-- content resizing -->
+<!-- https://codepen.io/cRckls/pen/mcGCL -->
+</html>
