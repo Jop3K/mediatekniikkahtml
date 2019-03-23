@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    min-width: 300px;
 
 }
 
@@ -27,6 +28,25 @@ footer {
     width: 100%;
 }
 
+a:link{
+    color:black;
+}
+a:visited{
+    color:black;
+}
+a:hover{
+    color:gray;
+}
+a:focus{
+    color:black;
+}
+a:active{
+    color:black;
+}
+a {
+    text-decoration: none;
+    font-style:italic;
+}
 
 
 
@@ -73,7 +93,6 @@ footer {
     box-sizing: border-box;
     min-height: 200px;
     /* border: 5px solid lightblue; */
-    border-style: groove;
     opacity: 0.9;
 }
 
@@ -86,9 +105,8 @@ footer {
 .kuva {
 
     max-height: 600px;
-    width: 60%;
+    width: 100%;
     height: auto;
-
 }
 
 @media screen and (min-width: 500px) {
@@ -136,10 +154,19 @@ footer {
 .aboutme {
 
     font-family: Arial;
-    font-size: 15px;
+    font-size: 14px;
+    text-align: left;
 }
+.about {
+    padding: 10px;
+}
+
 #myVideo {
-    margin-top: 10%;
+    top:11px;
+    position: relative;
+}
+.myvid{
+    padding: 10px;
 }
 
 #bgvideo {
@@ -194,3 +221,6 @@ footer {
 
     animation: doggolaugh  1s steps(2) infinite;
 }
+
+
+
